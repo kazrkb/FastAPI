@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+  <article class="content-section post-card">
+    <div class="article-header">
+      <img class="article-img"
+           src="https://ui-avatars.com/api/?name={{ post.author }}"
+           alt="{{ post.author }}'s profile picture"
+           width="42"
+           height="42"
+           loading="lazy">
+      <div class="article-body">
+        <div class="article-metadata">
+          <a class="author-link" href="#">{{ post.author }}</a>
+          <small class="text-muted">{{ post.date_posted }}</small>
+        </div>
+        <h2 class="article-title">{{ post.title }}</h2>
+        <p class="article-content">{{ post.content }}</p>
+        <hr class="post-divider">
+        <div class="post-card-footer">
+          <div class="post-actions">
+            <button class="action-btn action-btn-secondary" type="button">Edit Post</button>
+            <button class="action-btn action-btn-danger" type="button">Delete Post</button>
+          </div>
+          <a class="back-link" href="{{ url_for('posts') }}">Back to Posts</a>
+        </div>
+      </div>
+    </div>
+  </article>
+{% endblock content %}
